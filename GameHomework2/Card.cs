@@ -8,12 +8,7 @@ namespace GameHomework2
 {
     class Card
     {
-        /// <summary>
-        /// Constructor
-        /// </summary>
-        /// <param name="suit"></param>
-        /// <param name="rank"></param>
-        public Card(Suit suit, Rank rank)
+        Card(Suit suit, Rank rank)
         {
 
         }
