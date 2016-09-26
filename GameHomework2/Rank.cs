@@ -23,6 +23,9 @@ namespace GameHomework2
         public static Rank ACE;
         public static List<Rank> VALUES;
 
+        string storeName;
+        string storeSymbol;
+
         static Rank()
         {
             VALUES = new List<Rank>();
@@ -43,6 +46,9 @@ namespace GameHomework2
 
         public Rank(string name, string symbol)
         {
+            storeName = name;
+            storeSymbol = symbol;
+
             VALUES.Add(this);
         }
 
@@ -64,7 +70,7 @@ namespace GameHomework2
         /// <returns></returns>
         public string GetSymbol()
         {
-            return "";
+            return storeSymbol;
         }
 
         /// <summary>
@@ -73,16 +79,16 @@ namespace GameHomework2
         /// <returns></returns>
         public string GetName()
         {
-            return "";
+            return storeName;
         }
 
         /// <summary>
         /// Override tostring method
         /// </summary>
         /// <returns></returns>
-        public string ToString()
+        public override string ToString()
         {
-            return "";
+            return storeName;
         }
     }
 }
