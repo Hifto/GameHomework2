@@ -46,6 +46,8 @@ namespace GameHomework2
             // play a CardCountGame
             CardCountGame.PlayGame();
 
+            Console.ReadLine();
+
         }
     }
 }

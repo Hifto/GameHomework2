@@ -25,29 +25,31 @@ namespace GameHomework2
 
         string storeName;
         string storeSymbol;
+        int storeValue;
 
         static Rank()
         {
             VALUES = new List<Rank>();
-            TWO = new Rank("Two", "2");
-            THREE = new Rank("Three", "3");
-            FOUR = new Rank("Four", "4");
-            FIVE = new Rank("Five", "5");
-            SIX = new Rank("Six", "6");
-            SEVEN = new Rank("Seven", "7");
-            EIGHT = new Rank("Eight", "8");
-            NINE = new Rank("Nine", "9");
-            TEN = new Rank("Ten", "10");
-            JACK = new Rank("Jack", "J");
-            QUEEN = new Rank("Queen", "Q");
-            KING = new Rank("King", "K");
-            ACE = new Rank("Ace", "A");
+            TWO = new Rank("Two", "2", 2);
+            THREE = new Rank("Three", "3", 3);
+            FOUR = new Rank("Four", "4", 4);
+            FIVE = new Rank("Five", "5", 5);
+            SIX = new Rank("Six", "6", 6);
+            SEVEN = new Rank("Seven", "7", 7);
+            EIGHT = new Rank("Eight", "8", 8);
+            NINE = new Rank("Nine", "9", 9);
+            TEN = new Rank("Ten", "10", 10);
+            JACK = new Rank("Jack", "J", 11);
+            QUEEN = new Rank("Queen", "Q", 12);
+            KING = new Rank("King", "K", 13);
+            ACE = new Rank("Ace", "A", 14);
         }
 
-        public Rank(string name, string symbol)
+        public Rank(string name, string symbol, int value)
         {
             storeName = name;
             storeSymbol = symbol;
+            storeValue = value;
 
             VALUES.Add(this);
         }
@@ -61,7 +63,22 @@ namespace GameHomework2
         /// <returns></returns>
         public int CompareTo(Rank OtherRankObject)
         {
-            return 0;
+            if (this.storeValue == OtherRankObject.storeValue)
+            {
+                return 0;
+            }
+            else if (this.storeValue < OtherRankObject.storeValue)
+            {
+                return -1;
+            }
+            else if(this.storeValue > OtherRankObject.storeValue)
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
         }
 
         /// <summary>
