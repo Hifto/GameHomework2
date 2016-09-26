@@ -8,6 +8,12 @@ namespace GameHomework2
 {
     class Deck
     {
+        static List<Card> cards;
+        private static readonly Random rng = new Random();
+
+        /// <summary>
+        /// Creates an empty deck of cards
+        /// </summary>
         Deck()
         {
 
@@ -19,7 +25,7 @@ namespace GameHomework2
         /// <param name="card"></param>
         void AddCard(Card card)
         {
-
+            cards.Add(card);
         }
 
         /// <summary>
@@ -28,7 +34,7 @@ namespace GameHomework2
         /// <returns></returns>
         Card DealOne()
         {
-            return null;
+            return cards[rng.Next(cards.Count)];
         }
 
         /// <summary>
@@ -37,7 +43,7 @@ namespace GameHomework2
         /// <returns></returns>
         int GetCardsRemaining()
         {
-            return 0;
+            return cards.Count;
         }
 
         /// <summary>
@@ -46,7 +52,7 @@ namespace GameHomework2
         /// <returns></returns>
         int GetDeckSize()
         {
-            return 0;
+            return cards.Capacity;
         }
 
         /// <summary>
@@ -55,7 +61,14 @@ namespace GameHomework2
         /// <returns></returns>
         bool IsEmpty()
         {
-            return false;
+            if (cards.Count == 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         /// <summary>
@@ -63,6 +76,16 @@ namespace GameHomework2
         /// </summary>
         void Shuffle()
         {
+            int shuffle = cards.Count;
+
+            while (shuffle > 1)
+            {
+                int replace = (rng.Next(0, shuffle) % shuffle);
+                shuffle--;
+                Card held = cards[replace];
+                cards[replace] = cards[shuffle];
+                cards[shuffle] = held;
+            }
 
         }
 

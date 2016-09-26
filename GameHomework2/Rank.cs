@@ -8,23 +8,45 @@ namespace GameHomework2
 {
     class Rank
     {
-        static string TWO = "2";
-        static string THREE = "3";
-        static string FOUR = "4";
-        static string FIVE = "5";
-        static string SIX = "6";
-        static string SEVEN = "7";
-        static string EIGHT = "8";
-        static string NINE = "9";
-        static string TEN = "10";
-        static string JACK = "J";
-        static string QUEEN = "Q";
-        static string KING = "K";
-        static string ACE = "A";
+        static Rank TWO;
+        static Rank THREE;
+        static Rank FOUR;
+        static Rank FIVE;
+        static Rank SIX;
+        static Rank SEVEN;
+        static Rank EIGHT;
+        static Rank NINE;
+        static Rank TEN;
+        static Rank JACK;
+        static Rank QUEEN;
+        static Rank KING;
+        static Rank ACE;
         static List<Rank> VALUES;
 
+        static Rank()
+        {
+            TWO = new Rank("Two", "2");
+            THREE = new Rank("Three", "3");
+            FOUR = new Rank("Four", "4");
+            FIVE = new Rank("Five", "5");
+            SIX = new Rank("Six", "6");
+            SEVEN = new Rank("Seven", "7");
+            EIGHT = new Rank("Eight", "8");
+            NINE = new Rank("Nine", "9");
+            TEN = new Rank("Ten", "10");
+            JACK = new Rank("Jack", "J");
+            QUEEN = new Rank("Queen", "Q");
+            KING = new Rank("King", "K");
+            ACE = new Rank("Ace", "A");
+        }
+
+        Rank(string name, string symbol)
+        {
+            VALUES.Add(this);
+        }
+
         /// <summary>
-        /// Returns 0 is the ranks are the same, -1 if this object has
+        /// Returns 0 if the ranks are the same, -1 if this object has
         /// a lower rank than the other, 1 if this object has a higher
         /// rank than the other
         /// </summary>
@@ -32,6 +54,21 @@ namespace GameHomework2
         /// <returns></returns>
         int CompareTo(Rank OtherRankObject)
         {
+            
+
+            if (this == OtherRankObject)
+            {
+                return 0;
+            }
+            else if (this < OtherRankObject)
+            {
+                return -1;
+            }
+            else if (this > OtherRankObject)
+            {
+                return 1;
+            }
+
             return 0;
         }
 
@@ -41,7 +78,7 @@ namespace GameHomework2
         /// <returns></returns>
         string GetSymbol()
         {
-            return "";
+            
         }
 
         /// <summary>

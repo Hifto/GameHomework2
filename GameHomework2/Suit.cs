@@ -8,11 +8,24 @@ namespace GameHomework2
 {
     class Suit
     {
-        static string CLUBS = "club_symbol";
-        static string DIAMONDS = "diamond_symbol";
-        static string HEARTS = "heart_symbol";
-        static string SPADES = "spade_symbol";
+        static Suit CLUBS;
+        static Suit DIAMONDS;
+        static Suit HEARTS;
+        static Suit SPADES;
         static List<Suit> VALUES;
+
+        static Suit()
+        {
+            CLUBS = new Suit("Club", "♣");
+            DIAMONDS = new Suit("Diamond", "♦");
+            HEARTS = new Suit("Heart", "♥");
+            SPADES = new Suit("Spade", "♠");
+        }
+
+        Suit(string name, string symbol)
+        {
+            VALUES.Add(this);
+        }
 
         /// <summary>
         /// Returns 0 if the ranks are the same, -1 if this object is
@@ -23,6 +36,7 @@ namespace GameHomework2
         /// <returns></returns>
         int CompareTo(Suit OtherSuitObject)
         {
+
             return 0;
         }
 
