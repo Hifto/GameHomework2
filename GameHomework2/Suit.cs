@@ -14,6 +14,9 @@ namespace GameHomework2
         public static Suit SPADES;
         public static List<Suit> VALUES;
 
+        string storeName;
+        string storeSymbol;
+
         static Suit()
         {
             VALUES = new List<Suit>();
@@ -25,7 +28,10 @@ namespace GameHomework2
 
         public Suit(string name, string symbol)
         {
-           VALUES.Add(this);
+            storeName = name;
+            storeSymbol = symbol;
+
+            VALUES.Add(this);
         }
 
         /// <summary>
@@ -37,7 +43,6 @@ namespace GameHomework2
         /// <returns></returns>
         public int CompareTo(Suit OtherSuitObject)
         {
-
             return 0;
         }
 
@@ -47,7 +52,7 @@ namespace GameHomework2
         /// <returns></returns>
         public string GetSymbol()
         {
-            return "";
+            return storeSymbol;
         }
 
         /// <summary>
@@ -56,16 +61,16 @@ namespace GameHomework2
         /// <returns></returns>
         public string GetName()
         {
-            return "";
+            return storeName;
         }
 
         /// <summary>
         /// Override tostring method
         /// </summary>
         /// <returns></returns>
-        public string ToString()
+        public override string ToString()
         {
-            return "";
+            return storeName;
         }
     }
 }
