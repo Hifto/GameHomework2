@@ -25,6 +25,7 @@ namespace GameHomework2
 
         static Rank()
         {
+            VALUES = new List<Rank>();
             TWO = new Rank("Two", "2");
             THREE = new Rank("Three", "3");
             FOUR = new Rank("Four", "4");

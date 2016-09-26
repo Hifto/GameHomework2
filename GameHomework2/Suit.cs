@@ -16,6 +16,7 @@ namespace GameHomework2
 
         static Suit()
         {
+            VALUES = new List<Suit>();
             CLUBS = new Suit("Club", "♣");
             DIAMONDS = new Suit("Diamond", "♦");
             HEARTS = new Suit("Heart", "♥");
@@ -24,7 +25,7 @@ namespace GameHomework2
 
         public Suit(string name, string symbol)
         {
-            VALUES.Add(this);
+           VALUES.Add(this);
         }
 
         /// <summary>
