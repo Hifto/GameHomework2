@@ -8,11 +8,11 @@ namespace GameHomework2
 {
     class Suit
     {
-        static Suit CLUBS;
-        static Suit DIAMONDS;
-        static Suit HEARTS;
-        static Suit SPADES;
-        static List<Suit> VALUES;
+        public static Suit CLUBS;
+        public static Suit DIAMONDS;
+        public static Suit HEARTS;
+        public static Suit SPADES;
+        public static List<Suit> VALUES;
 
         static Suit()
         {
@@ -22,7 +22,7 @@ namespace GameHomework2
             SPADES = new Suit("Spade", "♠");
         }
 
-        Suit(string name, string symbol)
+        public Suit(string name, string symbol)
         {
             VALUES.Add(this);
         }
@@ -34,7 +34,7 @@ namespace GameHomework2
         /// </summary>
         /// <param name="OtherSuitObject"></param>
         /// <returns></returns>
-        int CompareTo(Suit OtherSuitObject)
+        public int CompareTo(Suit OtherSuitObject)
         {
 
             return 0;
@@ -44,7 +44,7 @@ namespace GameHomework2
         /// Symbol associated with the rank
         /// </summary>
         /// <returns></returns>
-        string GetSymbol()
+        public string GetSymbol()
         {
             return "";
         }
@@ -53,7 +53,7 @@ namespace GameHomework2
         /// Name asscociated with the rank
         /// </summary>
         /// <returns></returns>
-        string GetName()
+        public string GetName()
         {
             return "";
         }
@@ -62,7 +62,7 @@ namespace GameHomework2
         /// Override tostring method
         /// </summary>
         /// <returns></returns>
-        string ToString()
+        public string ToString()
         {
             return "";
         }

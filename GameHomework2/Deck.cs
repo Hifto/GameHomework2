@@ -14,7 +14,7 @@ namespace GameHomework2
         /// <summary>
         /// Creates an empty deck of cards
         /// </summary>
-        Deck()
+        public Deck()
         {
 
         }
@@ -23,7 +23,7 @@ namespace GameHomework2
         /// Adds a card to the deck
         /// </summary>
         /// <param name="card"></param>
-        void AddCard(Card card)
+        public void AddCard(Card card)
         {
             cards.Add(card);
         }
@@ -32,7 +32,7 @@ namespace GameHomework2
         /// Deal one card from the deck
         /// </summary>
         /// <returns></returns>
-        Card DealOne()
+        public Card DealOne()
         {
             return cards[rng.Next(cards.Count)];
         }
@@ -41,7 +41,7 @@ namespace GameHomework2
         /// Returns the number of cards remaining in the current deck
         /// </summary>
         /// <returns></returns>
-        int GetCardsRemaining()
+        public int GetCardsRemaining()
         {
             return cards.Count;
         }
@@ -50,7 +50,7 @@ namespace GameHomework2
         /// Returns the size of a full deck of cards
         /// </summary>
         /// <returns></returns>
-        int GetDeckSize()
+        public int GetDeckSize()
         {
             return cards.Capacity;
         }
@@ -59,7 +59,7 @@ namespace GameHomework2
         /// Returns true if deck is empty
         /// </summary>
         /// <returns></returns>
-        bool IsEmpty()
+        public bool IsEmpty()
         {
             if (cards.Count == 0)
             {
@@ -74,7 +74,7 @@ namespace GameHomework2
         /// <summary>
         /// Shuffles the deck of cards that are present in the deck
         /// </summary>
-        void Shuffle()
+        public void Shuffle()
         {
             int shuffle = cards.Count;
 
@@ -93,7 +93,7 @@ namespace GameHomework2
         /// Resets the deck back to a full deck by replacing any cards
         /// that were dealt out
         /// </summary>
-        void RestoreDeck()
+        public void RestoreDeck()
         {
 
         }

@@ -8,7 +8,7 @@ namespace GameHomework2
 {
     class Card
     {
-        Card(Suit suit, Rank rank)
+        public Card(Suit suit, Rank rank)
         {
 
         }
@@ -19,7 +19,7 @@ namespace GameHomework2
         /// </summary>
         /// <param name="OtherCardObject"></param>
         /// <returns></returns>
-        int CompareTo(Card OtherCardObject)
+        public int CompareTo(Card OtherCardObject)
         {
             return 0;
         }
@@ -28,7 +28,7 @@ namespace GameHomework2
         /// Returns the rank of this card
         /// </summary>
         /// <returns></returns>
-        Rank GetRank()
+        public Rank GetRank()
         {
             return null;
         }
@@ -37,7 +37,7 @@ namespace GameHomework2
         /// Returns the suit of this card
         /// </summary>
         /// <returns></returns>
-        Suit GetSuit()
+        public Suit GetSuit()
         {
             return null;
         }
@@ -46,7 +46,7 @@ namespace GameHomework2
         /// Returns a descripton of this card
         /// </summary>
         /// <returns></returns>
-        String ToString()
+        public String ToString()
         {
             return "";
         }

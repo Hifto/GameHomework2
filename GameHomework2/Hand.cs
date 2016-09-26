@@ -12,7 +12,7 @@ namespace GameHomework2
         /// Adds a card to this hand
         /// </summary>
         /// <param name="card"></param>
-        void AddCard(Card card)
+        public void AddCard(Card card)
         {
 
         }
@@ -29,7 +29,7 @@ namespace GameHomework2
         /// </summary>
         /// <param name="card"></param>
         /// <returns></returns>
-        bool ContainsCard(Card card)
+        public bool ContainsCard(Card card)
         {
             return true;
         }
@@ -37,7 +37,7 @@ namespace GameHomework2
         /// <summary>
         /// Throws away all cards in the hand, leaving an empty hand
         /// </summary>
-        void DiscardHand()
+        public void DiscardHand()
         {
 
         }
@@ -48,7 +48,7 @@ namespace GameHomework2
         /// </summary>
         /// <param name="card"></param>
         /// <returns></returns>
-        int FindCard(Card card)
+        public int FindCard(Card card)
         {
             return 0;
         }
@@ -59,7 +59,7 @@ namespace GameHomework2
         /// </summary>
         /// <param name="index"></param>
         /// <returns></returns>
-        Card GetCardAtIndex(int index)
+        public Card GetCardAtIndex(int index)
         {
             return null;
         }
@@ -68,7 +68,7 @@ namespace GameHomework2
         /// Returns the number of cards in the hand
         /// </summary>
         /// <returns></returns>
-        int GetNumberOfCards()
+        public int GetNumberOfCards()
         {
             return 0;
         }
@@ -77,7 +77,7 @@ namespace GameHomework2
         /// Returns true if the hand is empty, false otherwise
         /// </summary>
         /// <returns></returns>
-        bool IsEmpty()
+        public bool IsEmpty()
         {
             return true;
         }
@@ -88,7 +88,7 @@ namespace GameHomework2
         /// </summary>
         /// <param name="card"></param>
         /// <returns></returns>
-        Card RemoveCard(Card card)
+        public Card RemoveCard(Card card)
         {
             return null;
         }
@@ -99,7 +99,7 @@ namespace GameHomework2
         /// </summary>
         /// <param name="index"></param>
         /// <returns></returns>
-        Card RemoveCard(int index)
+        public Card RemoveCard(int index)
         {
             return null;
         }
@@ -115,7 +115,7 @@ namespace GameHomework2
         /// A description of this hand, which includes all cards in the hand
         /// </summary>
         /// <returns></returns>
-        string ToString()
+        public string ToString()
         {
             return "";
         }

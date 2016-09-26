@@ -6,22 +6,22 @@ using System.Threading.Tasks;
 
 namespace GameHomework2
 {
-    class Rank
+    public class Rank
     {
-        static Rank TWO;
-        static Rank THREE;
-        static Rank FOUR;
-        static Rank FIVE;
-        static Rank SIX;
-        static Rank SEVEN;
-        static Rank EIGHT;
-        static Rank NINE;
-        static Rank TEN;
-        static Rank JACK;
-        static Rank QUEEN;
-        static Rank KING;
-        static Rank ACE;
-        static List<Rank> VALUES;
+        public static Rank TWO;
+        public static Rank THREE;
+        public static Rank FOUR;
+        public static Rank FIVE;
+        public static Rank SIX;
+        public static Rank SEVEN;
+        public static Rank EIGHT;
+        public static Rank NINE;
+        public static Rank TEN;
+        public static Rank JACK;
+        public static Rank QUEEN;
+        public static Rank KING;
+        public static Rank ACE;
+        public static List<Rank> VALUES;
 
         static Rank()
         {
@@ -40,7 +40,7 @@ namespace GameHomework2
             ACE = new Rank("Ace", "A");
         }
 
-        Rank(string name, string symbol)
+        public Rank(string name, string symbol)
         {
             VALUES.Add(this);
         }
@@ -52,23 +52,8 @@ namespace GameHomework2
         /// </summary>
         /// <param name="OtherRankObject"></param>
         /// <returns></returns>
-        int CompareTo(Rank OtherRankObject)
+        public int CompareTo(Rank OtherRankObject)
         {
-            
-
-            if (this == OtherRankObject)
-            {
-                return 0;
-            }
-            else if (this < OtherRankObject)
-            {
-                return -1;
-            }
-            else if (this > OtherRankObject)
-            {
-                return 1;
-            }
-
             return 0;
         }
 
@@ -76,16 +61,16 @@ namespace GameHomework2
         /// Symbol associated with the rank
         /// </summary>
         /// <returns></returns>
-        string GetSymbol()
+        public string GetSymbol()
         {
-            
+            return "";
         }
 
         /// <summary>
         /// Name associated with the rank
         /// </summary>
         /// <returns></returns>
-        string GetName()
+        public string GetName()
         {
             return "";
         }
@@ -94,7 +79,7 @@ namespace GameHomework2
         /// Override tostring method
         /// </summary>
         /// <returns></returns>
-        string ToString()
+        public string ToString()
         {
             return "";
         }

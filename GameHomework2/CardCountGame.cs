@@ -8,5 +8,10 @@ namespace GameHomework2
 {
     class CardCountGame
     {
+        //placeholder method!!
+        public static int PlayGame()
+        {
+            return 0;
+        }
     }
 }
