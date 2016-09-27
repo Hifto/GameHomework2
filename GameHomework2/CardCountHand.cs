@@ -100,9 +100,6 @@ namespace GameHomework2
 
                 count++;
             }
-
-            //Console.WriteLine("The total for this hand is: " + total);
-
             return total;
         }
     }
