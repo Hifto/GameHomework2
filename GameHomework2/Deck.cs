@@ -8,7 +8,9 @@ namespace GameHomework2
 {
     class Deck
     {
-        static List<Card> cards = new List<Card>();
+        public List<Card> deckList = new List<Card>();
+        public List<Card> perfectDeck = new List<Card>();
+
         private static readonly Random rng = new Random();
 
         /// <summary>
@@ -16,7 +18,7 @@ namespace GameHomework2
         /// </summary>
         public Deck()
         {
-
+            perfectDeck = deckList;
         }
 
         /// <summary>
@@ -25,7 +27,7 @@ namespace GameHomework2
         /// <param name="card"></param>
         public void AddCard(Card card)
         {
-            cards.Add(card);
+            deckList.Add(card);
         }
 
         /// <summary>
@@ -34,7 +36,12 @@ namespace GameHomework2
         /// <returns></returns>
         public Card DealOne()
         {
-            return cards[rng.Next(cards.Count)];
+            int rand = rng.Next(deckList.Count);
+            Card dealt = deckList[rand];
+
+            deckList.Remove(deckList[rand]);
+
+            return dealt;
         }
 
         /// <summary>
@@ -43,7 +50,7 @@ namespace GameHomework2
         /// <returns></returns>
         public int GetCardsRemaining()
         {
-            return cards.Count;
+            return deckList.Count;
         }
 
         /// <summary>
@@ -52,7 +59,7 @@ namespace GameHomework2
         /// <returns></returns>
         public int GetDeckSize()
         {
-            return cards.Capacity;
+            return deckList.Capacity;
         }
 
         /// <summary>
@@ -61,7 +68,7 @@ namespace GameHomework2
         /// <returns></returns>
         public bool IsEmpty()
         {
-            if (cards.Count == 0)
+            if (deckList.Count == 0)
             {
                 return true;
             }
@@ -76,15 +83,15 @@ namespace GameHomework2
         /// </summary>
         public void Shuffle()
         {
-            int shuffle = cards.Count;
+            int shuffle = deckList.Count;
 
             while (shuffle > 1)
             {
                 int replace = (rng.Next(0, shuffle) % shuffle);
                 shuffle--;
-                Card held = cards[replace];
-                cards[replace] = cards[shuffle];
-                cards[shuffle] = held;
+                Card held = deckList[replace];
+                deckList[replace] = deckList[shuffle];
+                deckList[shuffle] = held;
             }
 
         }
@@ -95,7 +102,7 @@ namespace GameHomework2
         /// </summary>
         public void RestoreDeck()
         {
-
+            deckList = perfectDeck;
         }
     }
 }

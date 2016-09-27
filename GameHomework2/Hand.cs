@@ -8,7 +8,7 @@ namespace GameHomework2
 {
     abstract class Hand
     {
-        public List<Card> hand = new List<Card>();
+        public List<Card> listOfCards = new List<Card>();
 
         /// <summary>
         /// Adds a card to this hand
@@ -16,7 +16,7 @@ namespace GameHomework2
         /// <param name="card"></param>
         public void AddCard(Card card)
         {
-            hand.Add(card);
+            listOfCards.Add(card);
         }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace GameHomework2
         /// <returns></returns>
         public bool ContainsCard(Card card)
         {
-            foreach (Card element in hand)
+            foreach (Card element in listOfCards)
             {
                 if (card.CompareTo(element) == 0)
                 {
@@ -52,7 +52,7 @@ namespace GameHomework2
         /// </summary>
         public void DiscardHand()
         {
-            hand.Clear();
+            listOfCards.Clear();
         }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace GameHomework2
         {
             int count = 0;
 
-            foreach (Card element in hand)
+            foreach (Card element in listOfCards)
             {
                 if(card.CompareTo(element) == 0)
                 {
@@ -84,7 +84,7 @@ namespace GameHomework2
         /// <returns></returns>
         public Card GetCardAtIndex(int index)
         {
-            return hand[index];
+            return listOfCards[index];
         }
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace GameHomework2
         /// <returns></returns>
         public int GetNumberOfCards()
         {
-            return hand.Count;
+            return listOfCards.Count;
         }
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace GameHomework2
         /// <returns></returns>
         public bool IsEmpty()
         {
-            if (hand.Count == 0)
+            if (listOfCards.Count == 0)
             {
                 return true;
             }
@@ -122,12 +122,12 @@ namespace GameHomework2
         {
             Card removedCard;
 
-            for (int count = 0; count < hand.Count; count++)
+            for (int count = 0; count < listOfCards.Count; count++)
             {
-                if (card.CompareTo(hand[count]) == 0)
+                if (card.CompareTo(listOfCards[count]) == 0)
                 {
-                    removedCard = hand[count];
-                    hand.Remove(hand[count]);
+                    removedCard = listOfCards[count];
+                    listOfCards.Remove(listOfCards[count]);
                     return removedCard;
                 }
             }
@@ -144,8 +144,8 @@ namespace GameHomework2
         {
             Card removedCard;
 
-            removedCard = hand[index];
-            hand.Remove(hand[index]);
+            removedCard = listOfCards[index];
+            listOfCards.Remove(listOfCards[index]);
 
             return removedCard;
         }
@@ -165,7 +165,7 @@ namespace GameHomework2
         {
             string DescribeHand = "In this hand there is: " + "\n";
 
-            foreach (Card element in hand)
+            foreach (Card element in listOfCards)
             {
                 DescribeHand += (element.GetRank()) + " of " + (element.GetSuit() + "\n");
             }
