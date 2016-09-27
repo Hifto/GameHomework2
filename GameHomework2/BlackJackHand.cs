@@ -30,7 +30,67 @@ namespace GameHomework2
 
         public override int EvaluateHand()
         {
-            throw new NotImplementedException();
+            int total = 0;
+            int count = 0;
+
+            foreach (Card element in this.listOfCards)
+            {
+                if (this.GetCardAtIndex(count).GetRank() == Rank.ACE)
+                {
+                    total += 11;
+                }
+                else if (this.GetCardAtIndex(count).GetRank() == Rank.TWO)
+                {
+                    total += 2;
+                }
+                else if (this.GetCardAtIndex(count).GetRank() == Rank.THREE)
+                {
+                    total += 3;
+                }
+                else if (this.GetCardAtIndex(count).GetRank() == Rank.FOUR)
+                {
+                    total += 4;
+                }
+                else if (this.GetCardAtIndex(count).GetRank() == Rank.FIVE)
+                {
+                    total += 5;
+                }
+                else if (this.GetCardAtIndex(count).GetRank() == Rank.SIX)
+                {
+                    total += 6;
+                }
+                else if (this.GetCardAtIndex(count).GetRank() == Rank.SEVEN)
+                {
+                    total += 7;
+                }
+                else if (this.GetCardAtIndex(count).GetRank() == Rank.EIGHT)
+                {
+                    total += 8;
+                }
+                else if (this.GetCardAtIndex(count).GetRank() == Rank.NINE)
+                {
+                    total += 9;
+                }
+                else if (this.GetCardAtIndex(count).GetRank() == Rank.TEN)
+                {
+                    total += 10;
+                }
+                else if (this.GetCardAtIndex(count).GetRank() == Rank.JACK)
+                {
+                    total += 10;
+                }
+                else if (this.GetCardAtIndex(count).GetRank() == Rank.QUEEN)
+                {
+                    total += 10;
+                }
+                else if (this.GetCardAtIndex(count).GetRank() == Rank.KING)
+                {
+                    total += 10;
+                }
+
+                count++;
+            }
+            return total;
         }
     }
 }

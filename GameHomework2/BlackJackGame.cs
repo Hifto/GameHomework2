@@ -54,9 +54,17 @@ namespace GameHomework2
                     indexValue++;
 
                     Console.WriteLine("Hit or Stand (H/S)?\n");
-                }
 
+                    answer = Console.ReadLine().ToUpper();
+
+                    if (answer.Equals("S"))
+                    {
+                        break;
+                    }
+                }
             }
+
+
         }
     }
 }
