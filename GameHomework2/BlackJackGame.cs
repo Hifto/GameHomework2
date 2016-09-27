@@ -30,14 +30,21 @@ namespace GameHomework2
                 }
             }
 
+            //Play Blackjack
+
+            int indexValue = 0;
+
             //Welcome message
             Console.WriteLine("Welcome to BlackJack!\n");
 
-            //Adds starting cards to hand
+            //Adds starting cards to hand for user
             userHand.AddCard(deck.DealOne());
             Console.WriteLine("You have been dealt the: " + userHand.GetCardAtIndex(0).GetRank().GetName() + userHand.GetCardAtIndex(0).GetSuit().GetName() + ".\n");
             userHand.AddCard(deck.DealOne());
             Console.WriteLine("You have been dealt the: " + userHand.GetCardAtIndex(1).GetRank().GetName() + userHand.GetCardAtIndex(1).GetSuit().GetName() + ".\n");
+
+            //Gives starting total for user
+            Console.WriteLine("Your current total is: " + userHand.EvaluateHand());
 
             Console.WriteLine("Hit or Stand (H/S)?\n");
 
@@ -45,13 +52,21 @@ namespace GameHomework2
 
             if (answer.Equals("H"))
             {
-                int indexValue = 0;
+                indexValue = 0;
 
                 for (int n = 0; n < deck.deckList.Count; n++)
                 {
                     userHand.AddCard(deck.DealOne());
                     Console.WriteLine("You have been dealt the: " + userHand.GetCardAtIndex(indexValue).GetRank().GetName() + userHand.GetCardAtIndex(indexValue).GetSuit().GetName() + ".\n");
                     indexValue++;
+
+                    Console.WriteLine("Your current total is: " + userHand.EvaluateHand() + "\n");
+
+                    if (userHand.EvaluateHand() > 21)
+                    {
+                        Console.WriteLine("You Lose!");
+                        return "You Lose!";
+                    }
 
                     Console.WriteLine("Hit or Stand (H/S)?\n");
 
@@ -64,6 +79,23 @@ namespace GameHomework2
                 }
             }
 
+            //Adds starting cards to hand for computer
+            compHand.AddCard(deck.DealOne());
+            Console.WriteLine("The computer was dealt the: " + compHand.GetCardAtIndex(0).GetRank().GetName() + compHand.GetCardAtIndex(0).GetSuit().GetName() + ".\n");
+            compHand.AddCard(deck.DealOne());
+            Console.WriteLine("The computer was dealt the: " + compHand.GetCardAtIndex(1).GetRank().GetName() + compHand.GetCardAtIndex(1).GetSuit().GetName() + ".\n");
+
+            indexValue = 0;
+
+            for (int n = 0; n < deck.deckList.Count; n++)
+            {
+                if (compHand.EvaluateHand() < 17)
+                {
+                    compHand.AddCard(deck.DealOne());
+                    Console.WriteLine("The computer was dealt the: " + compHand.GetCardAtIndex(indexValue).GetRank().GetName() + compHand.GetCardAtIndex(indexValue).GetSuit().GetName() + ".\n");
+                    indexValue++;
+                }
+            }
 
         }
     }
