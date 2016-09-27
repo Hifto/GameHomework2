@@ -21,10 +21,10 @@ namespace GameHomework2
         static Suit()
         {
             VALUES = new List<Suit>();
-            CLUBS = new Suit("Club", "♣", 1);
-            DIAMONDS = new Suit("Diamond", "♦", 4);
-            HEARTS = new Suit("Heart", "♥", 2);
-            SPADES = new Suit("Spade", "♠", 3);
+            CLUBS = new Suit("Clubs", "♣", 1);
+            DIAMONDS = new Suit("Diamonds", "♦", 4);
+            HEARTS = new Suit("Hearts", "♥", 2);
+            SPADES = new Suit("Spades", "♠", 3);
         }
 
         public Suit(string name, string symbol, int value)
@@ -87,7 +87,7 @@ namespace GameHomework2
         /// <returns></returns>
         public override string ToString()
         {
-            return storeName;
+            return storeSymbol;
         }
     }
 }

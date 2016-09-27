@@ -8,7 +8,7 @@ namespace GameHomework2
 {
     abstract class Hand
     {
-        public List<Card> hand;
+        public List<Card> hand = new List<Card>();
 
         /// <summary>
         /// Adds a card to this hand
@@ -163,11 +163,11 @@ namespace GameHomework2
         /// <returns></returns>
         public override string ToString()
         {
-            string DescribeHand = "In this hand there is: ";
+            string DescribeHand = "In this hand there is: " + "\n";
 
             foreach (Card element in hand)
             {
-                DescribeHand += "A(n) " + (element.GetRank()) + " of " + (element.GetSuit() + "\n");
+                DescribeHand += (element.GetRank()) + " of " + (element.GetSuit() + "\n");
             }
 
             return DescribeHand;

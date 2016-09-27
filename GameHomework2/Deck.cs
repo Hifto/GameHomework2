@@ -8,7 +8,7 @@ namespace GameHomework2
 {
     class Deck
     {
-        static List<Card> cards;
+        static List<Card> cards = new List<Card>();
         private static readonly Random rng = new Random();
 
         /// <summary>

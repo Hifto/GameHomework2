@@ -105,7 +105,7 @@ namespace GameHomework2
         /// <returns></returns>
         public override string ToString()
         {
-            return storeName;
+            return storeSymbol;
         }
     }
 }
