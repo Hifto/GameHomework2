@@ -16,20 +16,22 @@ namespace GameHomework2
 
         string storeName;
         string storeSymbol;
+        int storeValue;
 
         static Suit()
         {
             VALUES = new List<Suit>();
-            CLUBS = new Suit("Club", "♣");
-            DIAMONDS = new Suit("Diamond", "♦");
-            HEARTS = new Suit("Heart", "♥");
-            SPADES = new Suit("Spade", "♠");
+            CLUBS = new Suit("Club", "♣", 1);
+            DIAMONDS = new Suit("Diamond", "♦", 4);
+            HEARTS = new Suit("Heart", "♥", 2);
+            SPADES = new Suit("Spade", "♠", 3);
         }
 
-        public Suit(string name, string symbol)
+        public Suit(string name, string symbol, int value)
         {
             storeName = name;
             storeSymbol = symbol;
+            storeValue = value;
 
             VALUES.Add(this);
         }
@@ -43,7 +45,22 @@ namespace GameHomework2
         /// <returns></returns>
         public int CompareTo(Suit OtherSuitObject)
         {
-            return 0;
+            if (this.storeValue == OtherSuitObject.storeValue)
+            {
+                return 0;
+            }
+            else if (this.storeValue < OtherSuitObject.storeValue)
+            {
+                return -1;
+            }
+            else if (this.storeValue > OtherSuitObject.storeValue)
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
         }
 
         /// <summary>
