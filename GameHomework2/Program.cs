@@ -49,16 +49,7 @@ namespace GameHomework2
             //play a BlackJackGame
             BlackJackGame.PlayGame();
 
-            /*CardCountHand hand = new CardCountHand();
-
-            hand.AddCard(c1);
-            hand.AddCard(c2);
-            hand.AddCard(c3);
-
-            Console.WriteLine(hand);
-            */
             Console.ReadLine();
-
         }
     }
 }

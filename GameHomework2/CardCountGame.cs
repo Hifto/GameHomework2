@@ -25,6 +25,8 @@ namespace GameHomework2
                 }
             }
 
+            deck.Shuffle();
+
             //Deals 8 cards to each hand
             for (int n = 0; n < 8; n++)
             {

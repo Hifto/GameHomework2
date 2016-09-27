@@ -21,10 +21,10 @@ namespace GameHomework2
         static Suit()
         {
             VALUES = new List<Suit>();
-            CLUBS = new Suit("Clubs", "♣", 1);
-            DIAMONDS = new Suit("Diamonds", "♦", 4);
-            HEARTS = new Suit("Hearts", "♥", 2);
-            SPADES = new Suit("Spades", "♠", 3);
+            CLUBS = new Suit("Clubs", "♣c", 1);
+            DIAMONDS = new Suit("Diamonds", "♦d", 4);
+            HEARTS = new Suit("Hearts", "♥h", 2);
+            SPADES = new Suit("Spades", "♠s", 3);
         }
 
         public Suit(string name, string symbol, int value)

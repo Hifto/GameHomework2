@@ -35,29 +35,32 @@ namespace GameHomework2
             int indexValue = 0;
 
             //Welcome message
+            Console.WriteLine("\n");
             Console.WriteLine("Welcome to BlackJack!\n");
+
+            deck.Shuffle();
 
             //Adds starting cards to hand for user
             userHand.AddCard(deck.DealOne());
-            Console.WriteLine("You have been dealt the: " + userHand.GetCardAtIndex(0).GetRank().GetName() + userHand.GetCardAtIndex(0).GetSuit().GetName() + ".\n");
+            Console.WriteLine("You have been dealt the: " + userHand.GetCardAtIndex(0).GetRank().GetName() + " of " + userHand.GetCardAtIndex(0).GetSuit().GetName() + ".\n");
             userHand.AddCard(deck.DealOne());
-            Console.WriteLine("You have been dealt the: " + userHand.GetCardAtIndex(1).GetRank().GetName() + userHand.GetCardAtIndex(1).GetSuit().GetName() + ".\n");
+            Console.WriteLine("You have been dealt the: " + userHand.GetCardAtIndex(1).GetRank().GetName() + " of " + userHand.GetCardAtIndex(1).GetSuit().GetName() + ".\n");
 
             //Gives starting total for user
             Console.WriteLine("Your current total is: " + userHand.EvaluateHand());
 
-            Console.WriteLine("Hit or Stand (H/S)?\n");
+            Console.WriteLine("Hit or Stand (H/S)?");
 
             string answer = Console.ReadLine().ToUpper();
 
             if (answer.Equals("H"))
             {
-                indexValue = 0;
+                indexValue = 2;
 
                 for (int n = 0; n < deck.deckList.Count; n++)
                 {
                     userHand.AddCard(deck.DealOne());
-                    Console.WriteLine("You have been dealt the: " + userHand.GetCardAtIndex(indexValue).GetRank().GetName() + userHand.GetCardAtIndex(indexValue).GetSuit().GetName() + ".\n");
+                    Console.WriteLine("You have been dealt the: " + userHand.GetCardAtIndex(indexValue).GetRank().GetName() + " of " + userHand.GetCardAtIndex(indexValue).GetSuit().GetName() + ".\n");
                     indexValue++;
 
                     Console.WriteLine("Your current total is: " + userHand.EvaluateHand() + "\n");
@@ -68,7 +71,7 @@ namespace GameHomework2
                         return "The computer wins!";
                     }
 
-                    Console.WriteLine("Hit or Stand (H/S)?\n");
+                    Console.WriteLine("Hit or Stand (H/S)?");
 
                     answer = Console.ReadLine().ToUpper();
 
@@ -81,19 +84,19 @@ namespace GameHomework2
 
             //Adds starting cards to hand for computer
             compHand.AddCard(deck.DealOne());
-            Console.WriteLine("The computer was dealt the: " + compHand.GetCardAtIndex(0).GetRank().GetName() + compHand.GetCardAtIndex(0).GetSuit().GetName() + ".\n");
+            Console.WriteLine("The computer was dealt the: " + compHand.GetCardAtIndex(0).GetRank().GetName() + " of " + compHand.GetCardAtIndex(0).GetSuit().GetName() + ".\n");
             compHand.AddCard(deck.DealOne());
-            Console.WriteLine("The computer was dealt the: " + compHand.GetCardAtIndex(1).GetRank().GetName() + compHand.GetCardAtIndex(1).GetSuit().GetName() + ".\n");
+            Console.WriteLine("The computer was dealt the: " + compHand.GetCardAtIndex(1).GetRank().GetName() + " of " + compHand.GetCardAtIndex(1).GetSuit().GetName() + ".\n");
 
             //Logic begins to decide if computer should hit or stand
-            indexValue = 0;
+            indexValue = 2;
 
             for (int n = 0; n < deck.deckList.Count; n++)
             {
                 if (compHand.EvaluateHand() < 17)
                 {
                     compHand.AddCard(deck.DealOne());
-                    Console.WriteLine("The computer was dealt the: " + compHand.GetCardAtIndex(indexValue).GetRank().GetName() + compHand.GetCardAtIndex(indexValue).GetSuit().GetName() + ".\n");
+                    Console.WriteLine("The computer was dealt the: " + compHand.GetCardAtIndex(indexValue).GetRank().GetName() + " of " + compHand.GetCardAtIndex(indexValue).GetSuit().GetName() + ".\n");
                     indexValue++;
                 }
                 else
@@ -103,10 +106,14 @@ namespace GameHomework2
 
                 if (compHand.EvaluateHand() > 21)
                 {
+                    Console.WriteLine("The computer's total is: " + compHand.EvaluateHand() + "\n");
                     Console.WriteLine("You win!");
                     return "You win!";
                 }
             }
+
+            Console.WriteLine("Your total is: " + userHand.EvaluateHand() + "\n");
+            Console.WriteLine("The computer's total is: " + compHand.EvaluateHand() + "\n");
 
             //Compare both user and computer hands to decide winner
             if (userHand.CompareTo(compHand) == 0)
@@ -128,7 +135,6 @@ namespace GameHomework2
             {
                 return "";
             }
-
         }
     }
 }
