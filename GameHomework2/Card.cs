@@ -8,9 +8,13 @@ namespace GameHomework2
 {
     class Card
     {
+        Suit heldSuit;
+        Rank heldRank;
+
         public Card(Suit suit, Rank rank)
         {
-
+            heldSuit = suit;
+            heldRank = rank;
         }
 
         /// <summary>
@@ -60,7 +64,7 @@ namespace GameHomework2
         /// <returns></returns>
         public Rank GetRank()
         {
-            return null;
+            return heldRank;
         }
 
         /// <summary>
@@ -69,16 +73,16 @@ namespace GameHomework2
         /// <returns></returns>
         public Suit GetSuit()
         {
-            return null;
+            return heldSuit;
         }
 
         /// <summary>
         /// Returns a descripton of this card
         /// </summary>
         /// <returns></returns>
-        public String ToString()
+        public override string ToString()
         {
-            return "";
+            return "The " + (this.heldRank) + " of " + (this.heldSuit);
         }
     }
 }
