@@ -8,16 +8,29 @@ namespace GameHomework2
 {
     class BlackJackHand : Hand
     {
-        //PLACEHOLDER METHODS START
         public override int CompareTo(Hand OtherHandObject)
         {
-            throw new NotImplementedException();
+            if (this.EvaluateHand() == OtherHandObject.EvaluateHand())
+            {
+                return 0;
+            }
+            else if (this.EvaluateHand() < OtherHandObject.EvaluateHand())
+            {
+                return -1;
+            }
+            else if (this.EvaluateHand() > OtherHandObject.EvaluateHand())
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
         }
 
         public override int EvaluateHand()
         {
             throw new NotImplementedException();
         }
-        //PLACEHOLDER METHODS END
     }
 }

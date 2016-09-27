@@ -71,7 +71,7 @@ namespace GameHomework2
             {
                 return -1;
             }
-            else if(this.storeValue > OtherRankObject.storeValue)
+            else if (this.storeValue > OtherRankObject.storeValue)
             {
                 return 1;
             }

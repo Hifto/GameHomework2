@@ -67,7 +67,7 @@ namespace GameHomework2
 
             foreach (Card element in listOfCards)
             {
-                if(card.CompareTo(element) == 0)
+                if (card.CompareTo(element) == 0)
                 {
                     return count;
                 }
@@ -163,11 +163,11 @@ namespace GameHomework2
         /// <returns></returns>
         public override string ToString()
         {
-            string DescribeHand = "In this hand there is: " + "\n";
+            string DescribeHand = "";
 
             foreach (Card element in listOfCards)
             {
-                DescribeHand += (element.GetRank()) + " of " + (element.GetSuit() + "\n");
+                DescribeHand += (element.GetRank()) + (element.GetSuit() + " ");
             }
 
             return DescribeHand;
