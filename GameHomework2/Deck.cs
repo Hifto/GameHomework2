@@ -18,7 +18,7 @@ namespace GameHomework2
         /// </summary>
         public Deck()
         {
-            perfectDeck = deckList;
+
         }
 
         /// <summary>
@@ -28,6 +28,7 @@ namespace GameHomework2
         public void AddCard(Card card)
         {
             deckList.Add(card);
+            perfectDeck.Add(card);
         }
 
         /// <summary>
@@ -102,7 +103,7 @@ namespace GameHomework2
         /// </summary>
         public void RestoreDeck()
         {
-            deckList = perfectDeck;
+            deckList.AddRange(perfectDeck);
         }
     }
 }

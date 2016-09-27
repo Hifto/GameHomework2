@@ -11,7 +11,8 @@ namespace GameHomework2
         //placeholder method!!
         public static int PlayGame()
         {
-            return 0;
+            CardCountHand handOne = new CardCountHand();
+            CardCountHand handTwo = new CardCountHand();
         }
     }
 }
