@@ -21,7 +21,37 @@ namespace GameHomework2
         /// <returns></returns>
         public int CompareTo(Card OtherCardObject)
         {
-            return 0;
+            if (this.GetSuit().CompareTo(OtherCardObject.GetSuit()) == 0)
+            {
+                if (this.GetRank().CompareTo(OtherCardObject.GetRank()) == 0)
+                {
+                    return 0;
+                }
+                else if(this.GetRank().CompareTo(OtherCardObject.GetRank()) == -1)
+                {
+                    return -1;
+                }
+                else if(this.GetRank().CompareTo(OtherCardObject.GetRank()) == 1)
+                {
+                    return 1;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            else if (this.GetSuit().CompareTo(OtherCardObject.GetSuit()) == -1)
+            {
+                return -1;
+            }
+            else if (this.GetSuit().CompareTo(OtherCardObject.GetSuit()) == 1)
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
         }
 
         /// <summary>
