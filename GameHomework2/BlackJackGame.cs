@@ -64,8 +64,8 @@ namespace GameHomework2
 
                     if (userHand.EvaluateHand() > 21)
                     {
-                        Console.WriteLine("You Lose!");
-                        return "You Lose!";
+                        Console.WriteLine("The computer wins!");
+                        return "The computer wins!";
                     }
 
                     Console.WriteLine("Hit or Stand (H/S)?\n");
@@ -85,6 +85,7 @@ namespace GameHomework2
             compHand.AddCard(deck.DealOne());
             Console.WriteLine("The computer was dealt the: " + compHand.GetCardAtIndex(1).GetRank().GetName() + compHand.GetCardAtIndex(1).GetSuit().GetName() + ".\n");
 
+            //Logic begins to decide if computer should hit or stand
             indexValue = 0;
 
             for (int n = 0; n < deck.deckList.Count; n++)
@@ -95,6 +96,37 @@ namespace GameHomework2
                     Console.WriteLine("The computer was dealt the: " + compHand.GetCardAtIndex(indexValue).GetRank().GetName() + compHand.GetCardAtIndex(indexValue).GetSuit().GetName() + ".\n");
                     indexValue++;
                 }
+                else
+                {
+                    break;
+                }
+
+                if (compHand.EvaluateHand() > 21)
+                {
+                    Console.WriteLine("You win!");
+                    return "You win!";
+                }
+            }
+
+            //Compare both user and computer hands to decide winner
+            if (userHand.CompareTo(compHand) == 0)
+            {
+                Console.WriteLine("It's a tie!");
+                return "It's a tie!";
+            }
+            else if (userHand.CompareTo(compHand) == -1)
+            {
+                Console.WriteLine("The computer wins!");
+                return "The computer wins!";
+            }
+            else if (userHand.CompareTo(compHand) == 1)
+            {
+                Console.WriteLine("You win!");
+                return "You win!";
+            }
+            else
+            {
+                return "";
             }
 
         }

@@ -8,6 +8,12 @@ namespace GameHomework2
 {
     class BlackJackHand : Hand
     {
+        /// <summary>
+        /// Compares two hands to determine which hand is greater. Return 0 if there is a draw, -1 if this hand is lower than the other hand,
+        /// and 1 if this hand is larger than the other hand
+        /// </summary>
+        /// <param name="OtherHandObject"></param>
+        /// <returns></returns>
         public override int CompareTo(Hand OtherHandObject)
         {
             if (this.EvaluateHand() == OtherHandObject.EvaluateHand())
@@ -28,6 +34,10 @@ namespace GameHomework2
             }
         }
 
+        /// <summary>
+        /// Takes a hand and totals up the point values
+        /// </summary>
+        /// <returns></returns>
         public override int EvaluateHand()
         {
             int total = 0;

@@ -46,6 +46,9 @@ namespace GameHomework2
             // play a CardCountGame
             CardCountGame.PlayGame();
 
+            //play a BlackJackGame
+            BlackJackGame.PlayGame();
+
             /*CardCountHand hand = new CardCountHand();
 
             hand.AddCard(c1);
