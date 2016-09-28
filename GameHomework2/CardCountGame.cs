@@ -34,6 +34,9 @@ namespace GameHomework2
                 handTwo.AddCard(deck.DealOne());
             }
 
+            //Welcome message
+            Console.WriteLine("Welcome to Card Count!\n");
+
             //Displays all of the cards in each hand
             Console.WriteLine("Hand 1: " + handOne.ToString());
             Console.WriteLine("Hand 2: " + handTwo.ToString());

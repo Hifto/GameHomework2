@@ -60,7 +60,7 @@ namespace GameHomework2
         /// <returns></returns>
         public int GetDeckSize()
         {
-            return deckList.Capacity;
+            return perfectDeck.Count();
         }
 
         /// <summary>
